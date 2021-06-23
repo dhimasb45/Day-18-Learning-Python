@@ -8,9 +8,9 @@ screen = Screen()
 screen.colormode(255)
 
 def random_color():
-    r = random.randint(0,256)
-    g = random.randint(0,256)
-    b = random.randint(0,256)
+    r = random.randint(0,255)
+    g = random.randint(0,255)
+    b = random.randint(0,255)
     color = (r,g,b)
     return color
 
@@ -43,7 +43,7 @@ for _ in range(4):
 """
 
 # Membuat triangel (3 sisi) - decagon (10 sisi)
-
+"""
 def custom_shape(jml_sisi):
     sudut = 360 / jml_sisi
     for _ in range(jml_sisi):
@@ -54,6 +54,18 @@ for jml_sisi in range(3,11):
     tim.speed("fastest")
     tim.color(random_color())
     custom_shape(jml_sisi)
+"""
+
+# Membuat random walk 
+
+direction = [0, 90, 180, 270]
+
+tim.pensize(10)
+tim.speed("fastest")
+for _ in range(100):
+    tim.setheading(random.choice(direction))
+    tim.color(random_color())
+    tim.forward(20)
 
 
 

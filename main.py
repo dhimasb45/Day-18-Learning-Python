@@ -27,7 +27,7 @@ square()
 """
 
 # Membuat kotak dengan dashed line
-
+"""
 def dashed_line(sum, dashed_line):
     for _ in range(sum):
         tim.forward(dashed_line)
@@ -40,7 +40,20 @@ for _ in range(4):
     tim.color(random_color())
     dashed_line(15, 5)
     tim.right(90)
+"""
 
+# Membuat triangel (3 sisi) - decagon (10 sisi)
+
+def custom_shape(jml_sisi):
+    sudut = 360 / jml_sisi
+    for _ in range(jml_sisi):
+        tim.forward(80)
+        tim.right(sudut)
+
+for jml_sisi in range(3,11):
+    tim.speed("fastest")
+    tim.color(random_color())
+    custom_shape(jml_sisi)
 
 
 
